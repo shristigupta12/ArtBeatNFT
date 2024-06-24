@@ -31,10 +31,19 @@ export const Carousel : React.FunctionComponent<HTMLAttributes<HTMLDivElement>> 
     
 
     return(
-        <div>
+        <div className="w-full flex">
             {mockData.map((obj)=>{
                 return(
-                    <Image key ={obj.id} src={obj.imageLink} width={200} height={20} alt="nftImage" />
+                    <div className="flex w-full justify-evenly items-center" key ={obj.id}>
+                        <Image src={obj.imageLink} width={370} height={20} alt="nftImage" className="h-4/6 " />
+                        <div className="nft-details text-white flex flex-col gap-6  text-center">
+                            <div className="flex flex-col gap-3">
+                                <div className=" text-6xl font-semibold ">{obj.name}</div>
+                                <div>by <span className="italic text-xl">{obj.username}</span></div>
+                            </div>
+                            <div className="text-md text-orange-400">{obj.numberOfItems} items | {obj.price} eth</div>
+                        </div>
+                    </div>
                 )
             })}
         </div>

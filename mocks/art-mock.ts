@@ -30,13 +30,5 @@ export const artMockData: Array<homePageCarousal> = [
         username: "Nicolas Chammat",
         price: 0.04,
         numberOfItems: 100
-    },
-    {   
-        id: "art5",
-        imageLink: "/home-caraousal-images/art5.jpg",
-        name: "Wondering girl",
-        username: "Alexandra Levasseur",
-        price: 0.06,
-        numberOfItems: 100
     }
 ]
