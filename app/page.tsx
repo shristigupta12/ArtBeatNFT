@@ -10,10 +10,10 @@ export interface NavCategoryContextType {
 }
 
 const NavCategoryContext = createContext<NavCategoryContextType | undefined>(undefined);
-export function useNavCategory() {
+export function UseNavCategory() {
   const context = useContext(NavCategoryContext);
   if (!context) {
-    throw new Error("useNavCategory must be used within a NavCategoryProvider");
+    throw new Error("UseNavCategory must be used within a NavCategoryProvider");
   }
   return context;
 }

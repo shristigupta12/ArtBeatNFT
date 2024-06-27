@@ -2,13 +2,18 @@ import { HTMLAttributes, useEffect, useState } from "react";
 import { artMockData } from "@/mocks/art-mock";
 import { musicMockData } from "@/mocks/music-mock";
 import { pfpMockData } from "@/mocks/pfp-mock";
-import { useNavCategory } from "@/app/page";
+import { UseNavCategory } from "@/app/page";
 import Image from "next/image";
 
 
-export const Carousel : React.FunctionComponent<HTMLAttributes<HTMLDivElement>> = ({className, children}) =>{
+interface CarouselSectionProps extends HTMLAttributes<HTMLDivElement> {
+  slideIndex: number;
+}
 
-    let {category, setCategory} = useNavCategory();
+
+export const Carousel : React.FunctionComponent<CarouselSectionProps> = ({slideIndex,className, children}:any) =>{
+
+    let {category, setCategory} = UseNavCategory();
 
     let [mockData, setMockData] = useState<Array<homePageCarousal>>(artMockData);
     
@@ -31,10 +36,10 @@ export const Carousel : React.FunctionComponent<HTMLAttributes<HTMLDivElement>> 
     
 
     return(
-        <div className="w-full flex">
+        <div className=" h-full w-full flex transition-all" style={{"transform":`translateX(${slideIndex*-100}vw)`}}>
             {mockData.map((obj)=>{
                 return(
-                    <div className="flex w-full justify-evenly items-center" key ={obj.id}>
+                    <div className="flex w-full h-full justify-evenly items-center" key ={obj.id}>
                         <Image src={obj.imageLink} width={370} height={20} alt="nftImage" className="h-4/6 " />
                         <div className="nft-details text-white flex flex-col gap-6  text-center">
                             <div className="flex flex-col gap-3">
