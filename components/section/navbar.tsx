@@ -2,11 +2,11 @@
 import { ReactElement, useContext } from "react"
 import { Button } from "../ui/button"
 import Image from "next/image"
-import { useNavCategory } from "@/app/page"
+import { UseNavCategory } from "@/app/page"
 
 export const Navbar : React.FunctionComponent = () => {
 
-    let {category, setCategory} = useNavCategory();
+    let {category, setCategory} = UseNavCategory();
 
     function handleClick(e: any) {
         setCategory(e.currentTarget.textContent || "");

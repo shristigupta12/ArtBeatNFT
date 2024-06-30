@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { ViewContainer } from "../layout/view-container"
 import { Carousel } from "../ui/homeCarousel"
-import { useNavCategory } from "@/app/page";
+import { UseNavCategory } from "@/app/page";
 
 
 
 export const CarouselSection : React.FunctionComponent<React.HTMLAttributes<HTMLDivElement>> = () => {
-    let {category, setCategory} = useNavCategory();
+    let {category, setCategory} = UseNavCategory();
 
     const [slideIndex, setSlideIndex] = useState<number>(0);
 
