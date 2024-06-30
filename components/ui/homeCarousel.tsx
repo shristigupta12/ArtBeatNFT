@@ -36,10 +36,10 @@ export const Carousel : React.FunctionComponent<CarouselSectionProps> = ({slideI
     
 
     return(
-        <div className=" h-full w-full flex transition-all" style={{"transform":`translateX(${slideIndex*-100}vw)`}}>
+        <div className=" h-full transition-all" style={{"transform":`translateX(${slideIndex*-100}vw)`}}>
             {mockData.map((obj)=>{
                 return(
-                    <div className="flex w-full h-full justify-evenly items-center" key ={obj.id}>
+                    <div className="flex flex-col w-full h-full justify-evenly items-center" key ={obj.id}>
                         <Image src={obj.imageLink} width={370} height={20} alt="nftImage" className="h-4/6 " />
                         <div className="nft-details text-white flex flex-col gap-6  text-center">
                             <div className="flex flex-col gap-3">
