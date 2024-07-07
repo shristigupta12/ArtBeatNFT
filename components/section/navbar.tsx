@@ -18,10 +18,11 @@ export const Navbar: React.FunctionComponent = () => {
     const [account, setAccount] = useState<string | null>(null);
 
     function handleClick(e: React.MouseEvent<HTMLLIElement>) {
-        setCategory(e.currentTarget.textContent || "");
+        setCategory(e.currentTarget.textContent || ""); 
     }
 
     const connectWalletHandler = async () => {
+        debugger;
         if (typeof window !== 'undefined' && typeof window.ethereum !== 'undefined') {
             try {
                 const accounts: any = await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -51,10 +52,9 @@ export const Navbar: React.FunctionComponent = () => {
                 </div>
                 <div>
                     <ul className="flex text-neutral-100 gap-20">
-                        <li className="cursor-pointer hover:text-orange-400" onClick={handleClick}>All</li>
-                        <li className="cursor-pointer hover:text-orange-400" onClick={handleClick}>Art</li>
-                        <li className="cursor-pointer hover:text-orange-400" onClick={handleClick}>Music</li>
-                        <li className="cursor-pointer hover:text-orange-400" onClick={handleClick}>PFPs</li>
+                        <li className={`cursor-pointer hover:text-orange-400  ${category === 'Art' ? 'text-orange-400' : ''}`} onClick={handleClick}>Art</li>
+                        <li className={`cursor-pointer hover:text-orange-400  ${category === 'Music' ? 'text-orange-400' : ''}`} onClick={handleClick}>Music</li>
+                        <li className={`cursor-pointer hover:text-orange-400  ${category === 'PFPs' ? 'text-orange-400' : ''}`} onClick={handleClick}>PFPs</li>
                     </ul>
                 </div>
                 <Button className="bg-orange-500 hover:bg-orange-400" onClick={connectWalletHandler}>
