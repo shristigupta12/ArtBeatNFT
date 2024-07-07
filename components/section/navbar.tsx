@@ -2,7 +2,6 @@
 import { ReactElement, useContext, useState } from "react"
 import { Button } from "../ui/button"
 import Image from "next/image"
-import { UseNavCategory } from "@/app/page"
 import Web3 from "web3"
 import { MetaMaskInpageProvider } from "@metamask/providers";
 
@@ -13,16 +12,12 @@ declare global {
 }
 
 export const Navbar: React.FunctionComponent = () => {
-    const { category, setCategory } = UseNavCategory();
+    
     const [web3, setWeb3] = useState<Web3 | null>(null);
     const [account, setAccount] = useState<string | null>(null);
 
-    function handleClick(e: React.MouseEvent<HTMLLIElement>) {
-        setCategory(e.currentTarget.textContent || ""); 
-    }
 
     const connectWalletHandler = async () => {
-        debugger;
         if (typeof window !== 'undefined' && typeof window.ethereum !== 'undefined') {
             try {
                 const accounts: any = await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -43,21 +38,21 @@ export const Navbar: React.FunctionComponent = () => {
 
     return (
         <nav>
-            <div className="flex text-neutral-100 shadow-md shadow-neutral-800 items-center justify-between py-3 px-32">
+            <div className="flex text-neutral-100 shadow-md shadow-neutral-800 items-center justify-between py-3 px-5 md:px-32 ml-20">
                 <div className="flex items-center">
                     <span>
                         <Image src="/orange.png" alt="logo" width="35" height="35" />
                     </span>
-                    <span className="text-neutral-100 font-bold">ArtBeatNFT</span>
+                    <span className="text -neutral-100 font-bold">ArtBeatNFT</span>
                 </div>
                 <div>
-                    <ul className="flex text-neutral-100 gap-20">
-                        <li className={`cursor-pointer hover:text-orange-400  ${category === 'Art' ? 'text-orange-400' : ''}`} onClick={handleClick}>Art</li>
-                        <li className={`cursor-pointer hover:text-orange-400  ${category === 'Music' ? 'text-orange-400' : ''}`} onClick={handleClick}>Music</li>
-                        <li className={`cursor-pointer hover:text-orange-400  ${category === 'PFPs' ? 'text-orange-400' : ''}`} onClick={handleClick}>PFPs</li>
+                    <ul className="flex text-neutral-100 gap-5 md:gap-20 ">
+                        <li className={`cursor-pointer hover:text-orange-400`} >Buy</li>
+                        <li className={`cursor-pointer hover:text-orange-400`} >Sell</li>
+                        <li className={`cursor-pointer hover:text-orange-400`} >Create</li>
                     </ul>
                 </div>
-                <Button className="bg-orange-500 hover:bg-orange-400" onClick={connectWalletHandler}>
+                <Button className="bg-orange-500 hover:bg-orange-400" size="sm" onClick={connectWalletHandler}>
                     {account ? `Connected: ${account.slice(0, 6)}...${account.slice(-4)}` : 'Connect Wallet'}
                 </Button>
             </div>

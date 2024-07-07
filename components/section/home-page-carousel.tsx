@@ -1,7 +1,7 @@
 import { ViewContainer } from "../layout/view-container"
 // import { Carousel } from "../ui/homeCarousel"
 
-import { UseNavCategory } from "@/app/page";
+import { UseSubNavCategory } from "@/app/page";
 import {
     Carousel,
     CarouselContent,
@@ -54,7 +54,7 @@ import Image from "next/image";
 // }
 
 export const CarouselSection : React.FunctionComponent<React.HTMLAttributes<HTMLDivElement>> = () => {
-    let {category, setCategory} = UseNavCategory();
+    let {category, setCategory} = UseSubNavCategory();
     let [mockData, setMockData] = useState<Array<homePageCarousal>>(artMockData);
     
     useEffect(()=>{
@@ -76,13 +76,13 @@ export const CarouselSection : React.FunctionComponent<React.HTMLAttributes<HTML
 
     return(
         <section> 
-            <ViewContainer className=" w-full text-white flex justify-between relative items-start">
+            <ViewContainer className=" h-[84vh] text-white flex justify-between relative items-start">
             <Carousel>
                 <CarouselContent>
                     {mockData.map((obj)=>{
                         return(
-                            <CarouselItem key ={obj.id} className="flex justify-evenly gap-2 ">
-                                <Image src={obj.imageLink} width={370} height={20} alt="nftImage" className="h-4/6 " />
+                            <CarouselItem key ={obj.id} className="flex gap-2 justify-center">
+                                <Image src={obj.imageLink} width={370} height={20} alt="nftImage" className="h-4/6" />
                                 <div className="nft-details text-white flex flex-col gap-6 items-center justify-center h-4/5">
                                     <div className="flex flex-col gap-3 items-center">
                                         <div className=" text-6xl font-semibold ">{obj.name}</div>
