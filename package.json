@@ -11,8 +11,6 @@
   "dependencies": {
     "@metamask/providers": "^17.1.0",
     "@metamask/sdk-react": "^0.14.1",
-    "@moralisweb3/common-evm-utils": "^2.26.9",
-    "@moralisweb3/next": "^2.26.9",
     "@radix-ui/react-popover": "^1.1.1",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.2.1",
@@ -23,9 +21,9 @@
     "moralis": "^2.26.9",
     "next": "14.2.4",
     "next-auth": "^4.24.7",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tailwind-merge": "^2.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7",
     "web3": "^4.10.0"
   },
