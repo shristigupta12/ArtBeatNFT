@@ -25,9 +25,9 @@ export default function Home() {
   const [category, setCategory ] = useState<string>("Art")
 
   return (
-   <main>
+   <main >
     <NavCategoryContext.Provider value={{category, setCategory}}>
-      <Navbar />
+      <Navbar/>
       <div className="flex gap-28  ">
       <SubNavbar/> 
       <PageContent>
