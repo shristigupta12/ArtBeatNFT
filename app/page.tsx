@@ -4,6 +4,7 @@ import { CarouselSection } from "@/components/section/home-page-carousel";
 import { Navbar } from "@/components/section/navbar";
 import { createContext, useContext, useState } from "react";
 import { SubNavbar } from "@/components/section/sub-navbar";
+import NFTCard from "@/components/ui/nft-card";
 
 export interface NavCategoryContextType {
   category: string;
@@ -31,7 +32,8 @@ export default function Home() {
       <div className="flex gap-28  ">
       <SubNavbar/> 
       <PageContent>
-        <CarouselSection />
+        {/* <NFTCard /> */}
+        {/* <CarouselSection /> */}
       </PageContent>
       </div>
     </NavCategoryContext.Provider>
