@@ -61,18 +61,18 @@ export const Navbar: React.FunctionComponent = () => {
 
     return (
         <nav>
-            <div className="flex text-neutral-100 shadow-md shadow-neutral-800 items-center justify-between py-3 px-5 md:px-32 ml-20">
-                <div className="flex items-center">
+            <div className="flex text-neutral-100  items-center justify-between py-3 px-5 md:px-32">
+                <div className="flex items-center gap-1">
                     <span>
-                        <Image src="/orange.png" alt="logo" width="35" height="35" />
+                        <Image src="/wand.png" alt="logo" width="25" height="25" />
                     </span>
                     <span className="text -neutral-100 font-bold">ArtBeatNFT</span>
                 </div>
                 <div>
                     <ul className="flex text-neutral-100 gap-5 md:gap-20 ">
-                        <li className={`cursor-pointer hover:text-orange-400`} >Buy</li>
-                        <li className={`cursor-pointer hover:text-orange-400`} >Sell</li>
-                        <li className={`cursor-pointer hover:text-orange-400`} >Create</li>
+                        <li className={`cursor-pointer hover:text-[#166AE3]`} >Buy</li>
+                        <li className={`cursor-pointer hover:text-[#166AE3]`} >Sell</li>
+                        <li className={`cursor-pointer hover:text-[#166AE3]`} >Create</li>
                     </ul>
                 </div>
                 {/* <Button className="bg-orange-500 hover:bg-orange-400" size="sm" onClick={connectWalletHandler}>

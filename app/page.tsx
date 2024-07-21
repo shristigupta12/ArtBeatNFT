@@ -29,13 +29,11 @@ export default function Home() {
    <main >
     <NavCategoryContext.Provider value={{category, setCategory}}>
       <Navbar/>
-      <div className="flex gap-28  ">
       <SubNavbar/> 
       <PageContent>
         {/* <NFTCard /> */}
         {/* <CarouselSection /> */}
       </PageContent>
-      </div>
     </NavCategoryContext.Provider>
    </main>
   );

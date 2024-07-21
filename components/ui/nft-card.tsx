@@ -45,7 +45,7 @@ function Card({ name, imgUrl }: CardProps) {
 export default function NFTCard() {
   const fetchData = async () => {
     try {
-      const data = await NFTCollectionData("kung-fu-art-1");
+      const data = await NFTCollectionData("impossible-creatures");
       console.log(data); // Ensure this logs the correct data structure
       return data; // Return the fetched data
     } catch (err) {

@@ -9,11 +9,11 @@ export const SubNavbar: React.FunctionComponent = () => {
     }
 
     return( 
-    <nav className="flex text-neutral-100 shadow-lg shadow-neutral-800 items-center py-10 h-[90vh]  justify-between px-4">
-        <ul className="flex flex-col justify-center items-center text-neutral-100 gap-5 md:gap-20 ">
-            <li className={`cursor-pointer hover:text-orange-400 ${category === 'Art' ? 'text-orange-400' : ''}`} onClick={handleClick}>Art</li>
-            <li className={`cursor-pointer hover:text-orange-400  ${category === 'Music' ? 'text-orange-400' : ''}`} onClick={handleClick}>Music</li>
-            <li className={`cursor-pointer hover:text-orange-400  ${category === 'PFPs' ? 'text-orange-400' : ''}`} onClick={handleClick}>PFPs</li>
+    <nav className="flex text-neutral-100  items-center justify-between py-3 px-5 md:px-32">
+        <ul className="flex justify-center items-center text-neutral-100 gap-5 md:gap-20 ">
+            <li className={`cursor-pointer hover:text-[#166AE3] ${category === 'Art' ? 'text-[#166AE3]' : ''}`} onClick={handleClick}>Art</li>
+            <li className={`cursor-pointer hover:text-[#166AE3]  ${category === 'Music' ? 'text-[#166AE3]' : ''}`} onClick={handleClick}>Music</li>
+            <li className={`cursor-pointer hover:text-[#166AE3]  ${category === 'PFPs' ? 'text-[#166AE3]' : ''}`} onClick={handleClick}>PFPs</li>
         </ul>
     </nav> 
     )

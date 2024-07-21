@@ -56,7 +56,7 @@ export const ConnectWalletButton = () => {
           </PopoverContent>
         </Popover>
       ) : (
-        <Button disabled={connecting} className="bg-orange-500 hover:bg-orange-400" size="sm" onClick={connect}>
+        <Button disabled={connecting} className="bg-[#166AE3] hover:bg-orange-400" size="sm" onClick={connect}>
           Connect Wallet
         </Button>
       )}
