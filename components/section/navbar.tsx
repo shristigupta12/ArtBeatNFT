@@ -7,6 +7,7 @@ import { MetaMaskInpageProvider } from "@metamask/providers";
 import { useToast } from '@/components/ui/use-toast'
 import { useSDK, MetaMaskProvider } from "@metamask/sdk-react";
 import { ConnectWalletButton } from "../ui/connect-wallet-btn"
+import { Input } from "../ui/input"
 
 // declare global {
 //     interface Window {
@@ -60,28 +61,61 @@ export const Navbar: React.FunctionComponent = () => {
   };
 
     return (
-        <nav>
-            <div className="flex text-neutral-100  items-center justify-between py-3 px-5 md:px-32">
-                <div className="flex items-center gap-1">
-                    <span>
-                        <Image src="/wand.png" alt="logo" width="25" height="25" />
-                    </span>
-                    <span className="text -neutral-100 font-bold">ArtBeatNFT</span>
+        <nav className="flex text-neutral-100  items-center justify-between py-3 px-10 font-semibold">
+                <div className="flex gap-7 items-center">
+                    <div className="flex items-center gap-1 border-r-[1px] border-neutral-500 pr-4  h-8">
+                        <span>
+                            <Image src="/wand.png" alt="logo" width="25" height="25" />
+                        </span>
+                        <span className="text -neutral-100 font-bold">ArtBeatNFT</span>
+                    </div>
+                    <div>
+                        <ul className="flex text-neutral-100 gap-2 md:gap-9  ">
+                            <li className={`cursor-pointer hover:text-neutral-400`} >Buy</li>
+                            <li className={`cursor-pointer hover:text-neutral-400`} >Sell</li>
+                            <li className={`cursor-pointer hover:text-neutral-400`} >Create</li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <ul className="flex text-neutral-100 gap-5 md:gap-20 ">
-                        <li className={`cursor-pointer hover:text-[#166AE3]`} >Buy</li>
-                        <li className={`cursor-pointer hover:text-[#166AE3]`} >Sell</li>
-                        <li className={`cursor-pointer hover:text-[#166AE3]`} >Create</li>
-                    </ul>
+
+                <div className="relative">
+                    {/* <Input className="bg-white placeholder-neutral-400 search-bar"/> */}
+                    <input type="text" placeholder="Search" className="w-96 p-3 pl-10  text-neutral-50 bg-gray-700 rounded-xl placeholder:text-neutral-50 opacity-50 outline-none  focus:border-[1px] focus:border-neutral-500 font-normal" />
+                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search absolute top-[2.2vh] left-2" width="25" height="21" viewBox="0 0 24 24" stroke-width="1.5" stroke="#777879" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                    <path d="M21 21l-6 -6" />
+                    </svg>
+                </div>
+
+                <div className="flex gap-7 items-center">
+                    <MetaMaskProvider debug={false} sdkOptions={sdkOptions}>
+                    <ConnectWalletButton />
+                    </MetaMaskProvider>
+                    <div className="flex gap-1 items-center bg-gray-700 p-3 rounded-xl opacity-50 cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-user-circle" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                            <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                            <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
+                        </svg>
+                    </div>
+                    <div className="flex gap-1 items-center bg-gray-700 p-3 rounded-xl opacity-50 cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-shopping-cart" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                            <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                            <path d="M17 17h-11v-14h-2" />
+                            <path d="M6 5l14 1l-1 7h-13" />
+                        </svg>
+                    </div>
+
                 </div>
                 {/* <Button className="bg-orange-500 hover:bg-orange-400" size="sm" onClick={connectWalletHandler}>
                     {account ? `Connected: ${account.slice(0, 6)}...${account.slice(-4)}` : 'Connect Wallet'}
                 </Button> */}
-                <MetaMaskProvider debug={false} sdkOptions={sdkOptions}>
-                    <ConnectWalletButton />
-                </MetaMaskProvider>
-            </div>
+                
+
         </nav>
     )
 }
