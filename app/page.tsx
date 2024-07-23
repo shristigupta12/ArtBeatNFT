@@ -5,6 +5,7 @@ import { Navbar } from "@/components/section/navbar";
 import { createContext, useContext, useState } from "react";
 import { SubNavbar } from "@/components/section/sub-navbar";
 import NFTCard from "@/components/ui/nft-card";
+import { HomeCarouselNew } from "@/components/section/homeCarouselNew";
 
 export interface NavCategoryContextType {
   category: string;
@@ -33,6 +34,7 @@ export default function Home() {
       <PageContent>
         {/* <NFTCard /> */}
         {/* <CarouselSection /> */}
+        <HomeCarouselNew />
       </PageContent>
     </NavCategoryContext.Provider>
    </main>
