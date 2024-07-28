@@ -7,6 +7,8 @@ import { SubNavbar } from "@/components/section/sub-navbar";
 import NFTCard from "@/components/ui/nft-card";
 import { HomeCarouselNew } from "@/components/section/homeCarouselNew";
 import { Charts } from "@/components/section/charts";
+import { NotableCollections } from "@/components/section/notable-collections";
+import { Footer } from "@/components/section/footer";
 
 export interface NavCategoryContextType {
   category: string;
@@ -37,7 +39,9 @@ export default function Home() {
         {/* <CarouselSection /> */}
         <HomeCarouselNew />
         <Charts />
+        <NotableCollections />
       </PageContent>
+      <Footer />
     </NavCategoryContext.Provider>
    </main>
   );

@@ -23,8 +23,8 @@ export const HomeCarouselNew : React.FunctionComponent = () => {
     return(
         <div className="flex items-center w-full px-9  ">
             {/* <div className="arrow-left cursor-pointer text-black bg-slate-50 rounded-[100%] w-7 h-7 flex items-center justify-center" onClick={handleClickLeft}>L</div> */}
-            <div className={`px-2 flex gap-3 w-[100vw] overflow-y-hidden overflow-x-scroll  `}>
-                <div className={`flex gap-3 translate-x-[0vw]`}>
+            <div className={`px-2 flex gap-3 w-[100vw] overflow-y-hidden overflow-x-scroll`}>
+                <div className={`flex gap-3`}>
                     {mockArray.map((obj, index) => (
                         <CarouselNew key={index} num={obj} />
                     ))}
