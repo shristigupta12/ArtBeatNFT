@@ -1,9 +1,8 @@
 import React from "react"
+import Image from "next/image"
 
 export const CarouselNew : React.FC<any> = ({num}) => {
     return(
-        <div className=" w-[280px] h-[280px] bg-white rounded-xl flex items-center justify-center font-bold">
-            {num}
-        </div>
+        <Image src={'/home-caraousal-images/music3.jpg'} width={280} height={280} className=" bg-neutral-800 rounded-xl flex items-center justify-center font-bold" alt={num} />
     )
 }

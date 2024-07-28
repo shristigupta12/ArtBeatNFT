@@ -75,6 +75,17 @@
   body{
     background-color: #121212;
   }
+
+  /* Hide the scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* Make the scrollbar background transparent */
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent; /* Make the scrollbar thumb transparent */
+}
+
 /* 
   .search-bar{
     opacity: 0.1;

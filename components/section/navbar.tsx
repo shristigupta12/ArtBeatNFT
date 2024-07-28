@@ -61,7 +61,7 @@ export const Navbar: React.FunctionComponent = () => {
   };
 
     return (
-        <nav className="flex text-neutral-100  items-center justify-between py-3 px-10 font-semibold">
+        <nav className="flex text-neutral-100 sticky items-center justify-between py-3 px-10 font-semibold">
                 <div className="flex gap-7 items-center">
                     <div className="flex items-center gap-1 border-r-[1px] border-neutral-500 pr-4  h-8">
                         <span>
@@ -80,7 +80,7 @@ export const Navbar: React.FunctionComponent = () => {
 
                 <div className="relative">
                     {/* <Input className="bg-white placeholder-neutral-400 search-bar"/> */}
-                    <input type="text" placeholder="Search" className="w-96 py-2 px-3 pl-10  text-neutral-50 bg-gray-700 rounded-xl placeholder:text-neutral-50 opacity-50 outline-none  focus:border-[1px] focus:border-neutral-500 font-normal" />
+                    <input type="text" placeholder="Search" className="w-96 py-2 px-3 pl-10  text-neutral-50 bg-neutral-800 rounded-xl placeholder:text-neutral-50  outline-none  focus:border-[1px] focus:border-neutral-500 font-normal" />
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search absolute top-[2.2vh] left-2" width="25" height="21" viewBox="0 0 24 24" stroke-width="1.5" stroke="#777879" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
@@ -92,7 +92,7 @@ export const Navbar: React.FunctionComponent = () => {
                     <MetaMaskProvider debug={false} sdkOptions={sdkOptions}>
                     <ConnectWalletButton />
                     </MetaMaskProvider>
-                    <div className="flex gap-1 items-center bg-gray-700 py-3 px-3 rounded-xl opacity-50 cursor-pointer">
+                    <div className="flex gap-1 items-center bg-neutral-800 py-3 px-3 rounded-xl cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-user-circle" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
@@ -100,7 +100,7 @@ export const Navbar: React.FunctionComponent = () => {
                             <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
                         </svg>
                     </div>
-                    <div className="flex gap-1 items-center bg-gray-700 py-3 px-3 rounded-xl opacity-50 cursor-pointer">
+                    <div className="flex gap-1 items-center bg-neutral-800 py-3 px-3 rounded-xl cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-shopping-cart" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
